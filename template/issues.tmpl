@@ -1,5 +1,5 @@
-{% filter table(['ID', 'PROJECT', 'STATUS', 'PRIORITY', 'ASSIGNEE', 'SUBJECT']) -%}
+{% filter table(['ID', 'PROJECT', 'STATUS', 'PRIORITY', 'TARGET VERSION', 'ASSIGNEE', 'SUBJECT']) -%}
 {% for issue in issues -%}
-#{{issue.id}}|{{issue.project.name}}|{{issue.status.name}}|{{issue.priority.name}}|{{issue.assigned_to.name|default('(not assigned)')}}|{{issue.subject}}
+#{{issue.id}}|{{issue.project.name}}|{{issue.status.name}}|{{issue.priority.name}}|{{issue.fixed_version.name}}|{{issue.assigned_to.name|default('(not assigned)')}}|{{issue.subject}}
 {% endfor -%}
 {% endfilter -%}
